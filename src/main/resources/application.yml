@@ -1,0 +1,106 @@
+server:
+  port: 1122
+
+
+#  spring.mail.host=smtp.gmail.com
+#  spring.mail.port=587
+#  spring.mail.username=<Login User to SMTP server>
+#  spring.mail.password=<Login password to SMTP server>
+#  spring.mail.properties.mail.smtp.auth=true
+#  spring.mail.properties.mail.smtp.starttls.enable=true
+
+
+
+spring:
+  datasource:
+    username: goldhubuser
+    password: goldhub@#321!
+    url: 'jdbc:postgresql://10.10.10.40:5432/goldhub?'
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dazzleformsp@gmail.com
+    password: zcitqaddvwbgkgmi
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+        imap:
+          host: imap.gmail.com
+          port: 993
+          ssl:
+            enable: true
+            trust: imap.gmail.com
+        store:
+          protocol: imaps
+      transport:
+        protocol: smtp
+
+
+
+
+
+
+
+#spring:
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: dazzleformsp@gmail.com
+#    password: zcitqaddvwbgkgmi
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#        imap:
+#          host: imap.gmail.com
+#          port: 993
+#      store:
+#        protocol: imaps
+#          ssl:
+#            enable: true
+
+
+#
+#spring:
+#  mail:
+#    host: imap.gmail.com
+#    port: 993
+#    username: dazzleformsp@gmail.com
+#    password: zcitqaddvwbgkgmi
+#    properties:
+#      store:
+#        protocol: imaps
+##      mail:
+#        smtp:
+#          auth: true
+#          starttls.enable : true
+#    debug : true
+#email:
+#  username: mailtokannan1112m@gmail.com
+#  password: hwyg xrin mzwo hjai
+#  host: imap.gmail.com
+#  port: 993
+#  mailbox: INBOX
+#  pollRate: 10000
+
+
+#azlansha199@gmail.com
+#Salman@0606#
+
+
+#logging:
+#    level:
+#     org.springframework.integration: DEBUG
+#     org.springframework.mail: DEBUG
