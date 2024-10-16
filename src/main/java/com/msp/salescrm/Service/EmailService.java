@@ -1,10 +1,12 @@
 package com.msp.salescrm.Service;
 
 import com.msp.salescrm.Dto.EmailDetails;
+import com.msp.salescrm.Dto.mailStatus;
 import jakarta.mail.MessagingException;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public interface EmailService {
 
@@ -18,6 +20,8 @@ public interface EmailService {
     String sendMailWithAttachment(EmailDetails details);
 
     List<EmailDetails> readNewMail() throws MessagingException, IOException;
+
+    Map OpenMailStatus(mailStatus s);
 
 //    String  readNewMail();
 }

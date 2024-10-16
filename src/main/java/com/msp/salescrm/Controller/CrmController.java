@@ -1,7 +1,11 @@
 package com.msp.salescrm.Controller;
 
 import com.msp.salescrm.Dto.EmailDetails;
+import com.msp.salescrm.Dto.mailStatus;
+import com.msp.salescrm.Model.crmUsers;
+import com.msp.salescrm.Model.emailQuery;
 import com.msp.salescrm.Service.EmailService;
+import com.msp.salescrm.Service.UserService;
 import jakarta.mail.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +19,7 @@ import java.util.*;
 @RestController
 @Slf4j
 @RequestMapping("/test/")
-public class TestController {
+public class CrmController {
 
 
     @Autowired
@@ -23,6 +27,29 @@ public class TestController {
 
     @Autowired
     private EmailService emailService;
+
+    @Autowired
+    UserService user;
+
+
+    @RequestMapping(value = "createUser",method = RequestMethod.POST)
+    public Map createNewUser(@RequestBody crmUsers us){
+
+        Map emailList = user.registerNewuser(us);
+
+        return emailList;
+
+    }
+
+
+    @RequestMapping(value = "openMail",method = RequestMethod.POST)
+    public Map openMailStatus(@RequestBody mailStatus s){
+
+        Map emailList = emailService.OpenMailStatus(s);
+
+        return emailList;
+
+    }
 
 
 

@@ -16,12 +16,13 @@ public class crmUsers {
     private Long id;
     @Column(name = "email",nullable = false,unique = true)
     private String userEmail;
-    @Column(name = "username")
+    @Column(name = "username",nullable = false)
     private String userName;
     @Column(name = "password")
     private String password;
     @Column(name = "role")
     private String role;
+    private String timestamp;
 
 
 
