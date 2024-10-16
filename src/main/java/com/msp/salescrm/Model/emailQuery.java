@@ -23,6 +23,8 @@ public class emailQuery {
     private String subject;
     @Column(name = "content")
     private String content;
+    @Column(name = "assignstatus")
+    private String assignStatus;
     @Column(name = "date")
     private String date;
     private String status;

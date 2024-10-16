@@ -37,6 +37,16 @@ public class TestController {
     }
 
 
+    @PostMapping("/receiveMail")
+    public String receiveMail(@RequestBody EmailDetails details)
+    {
+        String status
+                = emailService.sendSimpleMail(details);
+
+        return status;
+    }
+
+
 
     // Sending email with attachment
     @PostMapping("/sendMailWithAttachment")
@@ -51,17 +61,18 @@ public class TestController {
 
 
 
-   @Scheduled(fixedRate = 30000)
-    public void retriveNewMail(
-           ) throws MessagingException, IOException {
-        List<EmailDetails> status
-                = emailService.readNewMail();
-        if (!status.isEmpty()) {
-            System.out.println("status = " + status);
 
-
-        }
-    }
+//   @Scheduled(fixedRate = 30000)
+//    public void retriveNewMail(
+//           ) throws MessagingException, IOException {
+//        List<EmailDetails> status
+//                = emailService.readNewMail();
+//        if (!status.isEmpty()) {
+//            System.out.println("status = " + status);
+//
+//
+//        }
+//    }
 
 
 
